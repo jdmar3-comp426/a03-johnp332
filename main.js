@@ -1,6 +1,9 @@
-import {getMedian} from "./src/medium/medium_1"
+import {moreStats} from "./src/medium/medium_2"
 
-import {getStatistics} from "./src/medium/medium_1"
+// console.log(moreStats);
 
-let array = [9, 10, 12, 13, 13, 13, 15, 15, 16, 16, 18, 22, 23, 24, 24, 25]
-console.log(getStatistics(array));
+import { searchByYear } from "./src/medium/medium_3";
+
+import mpg_data from "./src/medium/data/mpg_data.js";
+
+console.log(searchByYear(mpg_data, [2009, 2010]));

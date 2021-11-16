@@ -62,6 +62,6 @@ export function getStatistics(array) {
     returnObj["max"] = Math.max.apply(null, array);
     returnObj["variance"] = variance(array, returnObj["mean"]);
     returnObj["standard_deviation"] = Math.sqrt(array.map(x => Math.pow(x - returnObj["mean"], 2)).reduce((a, b) => a + b) / array.length);
-    return returnObj
+    return returnObj;
 }
 
