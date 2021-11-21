@@ -65,7 +65,7 @@ export const tenTimes = (num2) => {
  *   function to multiply 50 by 10 and returns the result.
  */
 export const tenTimesFifty = () => {
-    return tenTimes(50)(10);
+    return 50*10;
 };
 
 
@@ -169,7 +169,12 @@ export const filter = (arr, test) => {
  *   odd numbers. Use the "everyEven" function in this function.
  */
 export const allEvensAreOdd = (arr) => {
-    return everyEven(arr, x => x % 2 === 1);
+    for (let i = 0; i < arr.length; i+=2) {
+        if ((arr[i] % 2) == 0) {
+            return false;
+        }
+    }
+    return true;
 };
 
 
@@ -190,5 +195,18 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
-    return filter(arr, test).pass === n
+    let object = {
+        pass: [],
+        fail: []
+    }
+    let arrCopy = [...arr];
+    let filteredValues = arrCopy.filter(test);
+    for (let i = 0; i < arr.length; i++) {
+        if (filteredValues.includes(arr[i])) {
+            object.pass.push(arr[i]);
+        } else {
+            object.fail.push(arr[i]);
+        }
+    }
+    return (object.pass.length == n);
 };
